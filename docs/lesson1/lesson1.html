@@ -1,0 +1,445 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Lesson 1</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="../welcome.html">Welcome</a></li><li class="chapter-item expanded "><a href="../lesson1/lesson1.html" class="active"><strong aria-hidden="true">1.</strong> Lesson 1</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#lesson-1-ddos-attacks" id="lesson-1-ddos-attacks">Lesson 1: DDoS Attacks</a></h1>
+<p>The slides for this lesson can be found <a href="./pdfs/DDoS%20Attacks.pdf">here</a>.</p>
+<h2><a class="header" href="#dos-taxonomy" id="dos-taxonomy">DoS taxonomy</a></h2>
+<p>The DoS terms defined in this lesson are as follows:</p>
+<ul>
+<li><strong>Random scanning</strong> - Each compromised computer probes random addresses.</li>
+<li><strong>Permutation scanning</strong> - All compromised computers share a common
+pseudo-random permutation of the IP address space.</li>
+<li><strong>Signpost scanning</strong> - Uses the communication patterns of the compromised
+computer to find new targets.</li>
+<li><strong>Hitlist scanning</strong> - A portion of a list of targets is supplied to a
+compromised computer.</li>
+<li><strong>Subnet spoofing</strong> - Generate random addresses within a given address space.</li>
+<li><strong>Random spoofing</strong> - Generate 32-bit numbers and stamp packets with them.</li>
+<li><strong>Fixed spoofing</strong> - The spoofed address is the address of the target.</li>
+<li><strong>Server application</strong> - The attack is targeted to a specific application on a
+server.</li>
+<li><strong>Network access</strong> - The attack is used to overload or crash the
+communication mechanism of a network.</li>
+<li><strong>Infrastructure</strong> - The motivation of this attack is a crucial service of a
+global internet operation, for example a core router.</li>
+</ul>
+<h2><a class="header" href="#network-dos" id="network-dos">Network DoS</a></h2>
+<p><strong>Goal</strong>: take out a large site with little computing power required, mainly
+achieved through <strong>amplification</strong> - using a small number of packets to achieve
+a big effect.</p>
+<h3><a class="header" href="#types-of-amplification-attacks" id="types-of-amplification-attacks">Types of amplification attacks</a></h3>
+<ol>
+<li><strong>DoS bugs</strong> - exploiting a design flaw in a service, disrupting the machine
+and crashing the server application.</li>
+<li><strong>DoS flood</strong> - commanding a botnet to generate a flood of requests against
+a server application.</li>
+</ol>
+<h2><a class="header" href="#network-layers-affected-by-dos" id="network-layers-affected-by-dos">Network layers affected by DoS</a></h2>
+<p>DoS attacks can happen at any layer of the network stack, here are some
+examples:</p>
+<ul>
+<li><strong>Link</strong> - saturating the link until no communication can occur.</li>
+<li><strong>TCP/UDP</strong> - causing the server to maintain too many sessions.</li>
+<li><strong>Application</strong> - requesting a large number of large file downloads, taxing
+the server.</li>
+</ul>
+<h2><a class="header" href="#syn-floods" id="syn-floods">SYN floods</a></h2>
+<p>This attack takes advantage of the TCP handshake, forcing a server to maintain
+the state of a large number of incomplete handshakes and dead sessions. The
+attacker floods the server with SYN packets with random source IP addresses -
+the server will attempt to send back a SYN/ACK but, because the IP address is
+fake, these handshakes will never be completed.</p>
+<p>This effectively fills up the backlog queue of the server listening on its
+socket - also wastes server memory maintaining state for incomplete connections.
+No further connections are possible while the server is waiting on a response
+from the spoofed IP addresses.</p>
+<h3><a class="header" href="#defending-against-syn-floods" id="defending-against-syn-floods">Defending against SYN floods</a></h3>
+<p>Use <strong>syncookies</strong> - removing connection state from the server, small
+performance overhead for this implementation, as well.</p>
+<blockquote>
+<p>SYN cookie is a technique used to resist IP Spoofing attacks. The technique's
+primary inventor Daniel J. Bernstein defines SYN cookies as &quot;particular
+choices of initial TCP sequence numbers by TCP servers.&quot; In particular, the
+use of SYN cookies allows a server to avoid dropping connections when the SYN
+queue fills up. Instead of storing additional connections, the SYN queue entry
+is encoded into the sequence number sent in the SYN+ACK response. If the
+server then receives a subsequent ACK response from the client with the
+incremented sequence number, the server is able to reconstruct the SYN queue
+entry using information encoded in the TCP sequence number and proceed as
+usual with the connection.</p>
+</blockquote>
+<p>Using <strong>proxies</strong> - powerful servers protect webservers from SYN floods, only
+forwarding traffic to the webserver if the TCP session is legitimate. The
+powerful servers receive the SYN flood and drop connections if the TCP session
+never completes. This was first implemented by organizations like CloudFlare and
+Prolexic.</p>
+<h3><a class="header" href="#sophisticated-syn-flood" id="sophisticated-syn-flood">Sophisticated SYN flood</a></h3>
+<p>In order to bypass proxies, some botnets establish the entire TCP session,
+but instead of sending legitimate HTTP headers, they send short HTTP headers and
+continue to flood the server at the application level.</p>
+<p>While this bypasses the proxy, the bots can no longer spoof their IP address and
+must maintain legitimate TCP connections. In addition, because the bot's IP
+address is exposed, the proxy can rate-limit the bot's HTTP requests. Finally,
+the location / IP addresses of the botnet / zombies are exposed to the
+defenders.</p>
+<h2><a class="header" href="#dos-mitigation-through-client-puzzles" id="dos-mitigation-through-client-puzzles">DoS mitigation through client puzzles</a></h2>
+<p>The idea with <strong>client puzzles</strong> is that, in order to continue with the session,
+the server sends the client a mathematical puzzle to solve, causing the client
+to have to do some computation and provide an answer before the server will
+handle the client's request.</p>
+<p>During a DoS attack, the server will generate client puzzles that will continue
+to get harder as the DoS attack continues. If no attack is occurring, the server
+will cease sending client puzzles.</p>
+<p>The primary limitation discussed in this lecture is that it's hard to scale
+hard puzzles based on CPU computation because not all devices are created equal.
+Cellphones will have a harder time accessing sites if required to solve client
+puzzles.</p>
+<h2><a class="header" href="#dos-mitigation-through-ip-traceback" id="dos-mitigation-through-ip-traceback">DoS mitigation through IP traceback</a></h2>
+<p>The idea here is to modify core internet routers to record information,
+specifically related to the path of the packet, so that the victim can determine
+the source of a DoS attack.</p>
+<p>Some assumptions have to be made my the implementers of this defense:</p>
+<ul>
+<li>Most core networks routers remain uncompromised</li>
+<li>Attackers send many packets</li>
+<li>Route from attacker to victim remains relatively stable</li>
+</ul>
+<p>Some issues exist with this mitigation:</p>
+<ul>
+<li>Requires more space in the IP packet in order to store pathing information</li>
+<li>Paths can be long between attacker and victim</li>
+<li>No extra fields currently exist in the IP header</li>
+</ul>
+<p>In order to implement this without too many changes to the IP specification, we
+can:</p>
+<ul>
+<li>Store one link in each packet, as the router probabilistically stores its own
+address.</li>
+<li>Regardless of the path length, this requires a fixed amount of space in the IP
+header as we are only overwriting the source address.</li>
+</ul>
+<h3><a class="header" href="#edge-sampling" id="edge-sampling">Edge sampling</a></h3>
+<p>Using the assumptions defined above and the probabilistic storage of router
+addresses in the destination field of the IP header, victims are able to conduct
+<strong>edge sampling</strong> in order to determine the path and source of an attack.
+Because routers probabilistically store their information in the IP header, with
+enough edge samples, the victim is able to reconstruct a graph using the edges
+to determine the source of an attack.</p>
+<h2><a class="header" href="#dos-reflection-attacks" id="dos-reflection-attacks">DoS reflection attacks</a></h2>
+<p><strong>Reflection attacks</strong> are a DoS technique in which the attacker uses a botnet
+to spoof the IP address of the victim for requests that will get serviced to the
+victim. For instance, the botnets all use the IP address of the victim to send
+DNS or HTTP requests to a server. The servers are unwittingly responding to
+these requests and sending the responses to the victim, causing the victim to
+be overwhelmed with unsolicited responses.</p>
+<p>IP traceback isn't helpful here because any tracing would lead back to the
+<strong>reflectors</strong> - legitimate servers answering a request.</p>
+<h2><a class="header" href="#capability-based-defenses" id="capability-based-defenses">Capability based defenses</a></h2>
+<p>Similar to how capabilities are provided to services in some operating system
+implementations, in order to communicate with a server the client sends a SYN
+request to the server but also includes in the request a request for a
+<strong>capability</strong> - a unique, cryptographically secure secret maintained by the
+server that the client must offer in order to communicate.</p>
+<p>The client can continue to communicate once it receives its capability, offering
+the capability each time it sends a packet. Once the client becomes hostile,
+however, due to detection via rate-limiting and its number of requests, the
+server can revoke its capability, causing its traffic to be dropped. This
+mitigation can take place as close to the source as possible, and works best
+if done so.</p>
+<h2><a class="header" href="#quizzes" id="quizzes">Quizzes</a></h2>
+<p><strong>Which of these are reasons why the UDP-based NTP protocols is particularly
+vulnerable to amplification attacks</strong>?</p>
+<ul>
+<li><input disabled="" type="checkbox" checked=""/>
+A small command can generate a large response</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Vulnerable to IP spoofing</li>
+</ul>
+<p><strong>SYN cookies quiz</strong></p>
+<ul>
+<li><input disabled="" type="checkbox" checked=""/>
+The server must reject all TCP options because the server discards the
+SYN queue entry.</li>
+</ul>
+<p><strong>With regards to a UDP flood attack, which of the following statements are
+true:</strong></p>
+<ul>
+<li><input disabled="" type="checkbox" checked=""/>
+Attackers can spoof the IP address of their UDP packets</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Firewalls cannot stop a flood because the firewall is susceptible to
+flooding.</li>
+</ul>
+<p><strong>Client puzzles quiz</strong></p>
+<p>Which of the following statements are true?</p>
+<ul>
+<li><input disabled="" type="checkbox" checked=""/>
+Client puzzles should be stateless.</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Client puzzle complexity should increase as the strength of the attack
+increases.</li>
+</ul>
+<p><strong>Which of the following are assumptions that can be made about IP Traceback?</strong></p>
+<ul>
+<li><input disabled="" type="checkbox" checked=""/>
+Attackers may work alone or in groups.</li>
+</ul>
+<p><strong>Select all the statements that are true for edge sampling:</strong></p>
+<ul>
+<li><input disabled="" type="checkbox" checked=""/>
+Multiple attackers can be identified since edges identify splits in
+reverse path.</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Requires space in the IP packet header.</li>
+</ul>
+<p><strong>Self defense against reflector attacks should incorporate:</strong></p>
+<ul>
+<li><input disabled="" type="checkbox" checked=""/>
+Server redundancy - servers should be located in multiple networks and
+locations.</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Traffic limiting - traffic from a name server should be limited to
+reasonable thresholds.</li>
+</ul>
+<h2><a class="header" href="#references" id="references">References</a></h2>
+<ol>
+<li><a href="https://blog.cloudflare.com/the-ddos-that-almost-broke-the-internet/">https://blog.cloudflare.com/the-ddos-that-almost-broke-the-internet/</a></li>
+<li><a href="./pdfs/tva-sigcomm2005.pdf">A DoS-limiting Network Architecture</a></li>
+<li><a href="./pdfs/Sigcomm00.pdf">Practical Network Support for IP Traceback</a></li>
+<li><a href="./pdfs/crypto03.pdf">On Memory-Bound Functions for Fighting Spam</a></li>
+<li><a href="./pdfs/memory-longer-acm.pdf">Moderately Hard, Memory-bound Functions</a></li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../welcome.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../welcome.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
