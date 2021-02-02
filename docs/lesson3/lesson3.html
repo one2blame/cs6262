@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Lesson 2</title>
+        <title>Lesson 3</title>
         
         
 
@@ -95,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item affix "><a href="../welcome.html">Welcome</a></li><li class="chapter-item "><a href="../lesson1/lesson1.html"><strong aria-hidden="true">1.</strong> Lesson 1</a></li><li class="chapter-item expanded "><a href="../lesson2/lesson2.html" class="active"><strong aria-hidden="true">2.</strong> Lesson 2</a></li><li class="chapter-item "><a href="../lesson3/lesson3.html"><strong aria-hidden="true">3.</strong> Lesson 3</a></li></ol>
+                <ol class="chapter"><li class="chapter-item affix "><a href="../welcome.html">Welcome</a></li><li class="chapter-item "><a href="../lesson1/lesson1.html"><strong aria-hidden="true">1.</strong> Lesson 1</a></li><li class="chapter-item "><a href="../lesson2/lesson2.html"><strong aria-hidden="true">2.</strong> Lesson 2</a></li><li class="chapter-item expanded "><a href="../lesson3/lesson3.html" class="active"><strong aria-hidden="true">3.</strong> Lesson 3</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -163,66 +163,273 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#lesson-2-cybercrimes" id="lesson-2-cybercrimes">Lesson 2: Cybercrimes</a></h1>
-<p>The slides for this lesson can be found <a href="./pdfs/Cybercrimes.pdf">here</a></p>
-<h2><a class="header" href="#underground-actors" id="underground-actors">Underground actors</a></h2>
-<p>Below are some definitions for actors that can be found in the underground,
-cybercrime economy:</p>
+                        <h1><a class="header" href="#lesson-3" id="lesson-3">Lesson 3</a></h1>
+<p>The slides for this lesson can be found <a href="./pdfs/PenetrationTesting.pdf">here</a></p>
+<h2><a class="header" href="#overview" id="overview">Overview</a></h2>
+<p>This lesson discusses penetration testing and security assessments.
+Penetration testing is used to evaluate the strength of an organization's
+security controls to include:</p>
 <ul>
-<li><strong>Exploit developers</strong> - software reverse-engineers, develop and sell exploit
-packages and kits.</li>
-<li><strong>Botnet masters</strong> - develop software to control vast numbers of zombie
-machines, rent out botnets to other actors.</li>
-<li><strong>Spammers</strong> - advertise links for other actors, usually assist phishers.</li>
-<li><strong>Phishers</strong> - attempt to get people to click links in order to exploit or
-compromise systems.</li>
-<li><strong>Counterfeiters</strong> - run websites selling fake goods, must be able to clear
-credit cards.</li>
-<li><strong>Hosting providers</strong> - operate in lawless places, provide secure
-infrastructure for other actors, expensive.</li>
-<li><strong>Carders, cashiers, and mules</strong> - turn stolen bank accounts and credit cards
-into cash, launder money.</li>
-<li><strong>Crowdturfers</strong> - maintain fake accounts</li>
+<li>Procedural</li>
+<li>Operational</li>
+<li>Technological</li>
 </ul>
-<h2><a class="header" href="#quizzes" id="quizzes">Quizzes</a></h2>
-<p><strong>Dark Web Knowledge Check</strong></p>
+<p>The benefits of penetration testing are as follows:</p>
 <ul>
-<li><strong>Deep web</strong> - not indexed by search engines</li>
-<li><strong>Surface web</strong> - readily available to the public, and searchable with
-standard search engines</li>
-<li><strong>Dark web</strong> - web content that exists on darknets</li>
+<li>Security of the network</li>
+<li>Discovery of vulnerabilities</li>
+<li>Demonstration of threats</li>
 </ul>
-<p><strong>Pay Per Install Knowledge Check</strong></p>
+<p>The scope of a penetration test can include social engineering and physical
+access and the security of a network.</p>
+<h2><a class="header" href="#methodology" id="methodology">Methodology</a></h2>
+<p>The methodology and steps of an attack are as follows:</p>
 <ul>
-<li><strong>Crypter</strong> - application that hides malicious code from anti-virus software</li>
-<li><strong>Trojan Download Manager</strong> - application that allows an attacker to update or
-install malware on a victim's computer</li>
-<li><strong>Blackhat Search Engine Optimizer</strong> - increases traffic to the attacker's
-site by manipulating search engines</li>
-<li><strong>Doorway page</strong> - webpage that lists many keywords in hopes of increasing
-search engine ranking. Scripts on the page redirect to attacker's webpage.</li>
+<li>Footprinting</li>
+<li>Scanning</li>
+<li>Enumeration</li>
+<li>Gaining access</li>
+<li>Escalating privilege</li>
+<li>Pilfering</li>
+<li>Covering tracks</li>
+<li>Creating back doors</li>
 </ul>
-<p><strong>What are the two defining characteristics of internet spam?</strong></p>
+<h3><a class="header" href="#footprinting" id="footprinting">Footprinting</a></h3>
 <ul>
-<li><input disabled="" type="checkbox" checked=""/>
-Typically inappropriate or irrelevant</li>
-<li><input disabled="" type="checkbox" checked=""/>
-Large number of recipients</li>
+<li>Recon and information gathering</li>
+<li>Find target IP address / phone number range</li>
+<li>Namespace acquisition / discovery</li>
+<li>Network topology</li>
 </ul>
-<p><strong>Name the top three countries where spam directed visitors added items to their
-shopping cart:</strong></p>
+<p>Techniques used for footprinting are:</p>
 <ul>
-<li><input disabled="" type="checkbox" checked=""/>
-United States</li>
-<li><input disabled="" type="checkbox" checked=""/>
-Canada</li>
-<li><input disabled="" type="checkbox" checked=""/>
-Philippines</li>
+<li>Open source research
+<ul>
+<li>Tools used are usually:
+<ul>
+<li>Google, search engines, Edgar</li>
 </ul>
+</li>
+</ul>
+</li>
+<li>Finding domain names, admins, IP addresses and name servers
+<ul>
+<li>Tools used are usually:
+<ul>
+<li>Whois (network solution; arin)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>DNS zone transfers
+<ul>
+<li>Tools used are usually:
+<ul>
+<li>Nslookup (ls -d), dig, Sam Spade</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#scanning" id="scanning">Scanning</a></h3>
+<p>Determine which machines are online and their ports, services, versions,
+configurations, vulnerabilities. Techniques used for scanning are:</p>
+<ul>
+<li>Ping sweeping
+<ul>
+<li>Tools used are usually:
+<ul>
+<li>Fping, icmpenum, WS_Ping, ProPack, nmap</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>TCP/UDP port scanning
+<ul>
+<li>Tools used are usually:
+<ul>
+<li>Nmap, superscan, fscan</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>OS detection
+<ul>
+<li>Tools used are usualy:
+<ul>
+<li>Nmap, queso, siphon</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#enumeration" id="enumeration">Enumeration</a></h3>
+<p>More intrusive probing than just scanning, identifying valid user accounts or
+poorly protected resource shares. Techniques and tools used for enumeration are:</p>
+<ul>
+<li>List user accounts
+<ul>
+<li>Tools used are usually:
+<ul>
+<li>Null sessions, DumpACL, sid2user, onSiteAdmin</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>List file shares
+<ul>
+<li>Tools used are usually:
+<ul>
+<li>Showmount, NAT, legion</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Identify applications
+<ul>
+<li>Tools used are usually:
+<ul>
+<li>Banner grabbing with telnet, netcat, rpcinfo</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#gaining-access" id="gaining-access">Gaining access</a></h3>
+<p>Once attackers identify a vulnerability, gaining access is done through
+exploitation of said vulnerability with a tool / script, etc. Automatically
+generating a working exploit from a vulnerability is still an open problem.
+The techniques for gaining access is as follows:</p>
+<ul>
+<li>Password eavesdropping
+<ul>
+<li>Tools used are usually:
+<ul>
+<li>tcpdump / ssldump, l0phtcrack, readsmb</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>File share brute forcing
+<ul>
+<li>Tools used are usually:
+<ul>
+<li>NAT legion</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Password file grab
+<ul>
+<li>Tools used are usually:
+<ul>
+<li>tftp, pwddump2</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Buffer overflows
+<ul>
+<li>Tools used are usually:
+<ul>
+<li>ttdb, bind, IIS, .HTR/ISM.DLL</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#escalating-privilege" id="escalating-privilege">Escalating privilege</a></h3>
+<p>If only user-level access was gained from exploitation, attackers seek to gain
+complete control of the system. Techniques involved with escalating privilege
+are:</p>
+<ul>
+<li>Password cracking
+<ul>
+<li>Tools usually used are:
+<ul>
+<li>john the ripper, l0phtcrack</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Using known exploits
+<ul>
+<li>Some examples:
+<ul>
+<li>lc_messages, getadmin, sechole</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#pilfering" id="pilfering">Pilfering</a></h3>
+<p>After gaining full access to a device, attackers gather info to allow access to
+other trusted systems. Techniques for pilfering are:</p>
+<ul>
+<li>Elevating trust
+<ul>
+<li>rhosts, LSA secrets</li>
+</ul>
+</li>
+<li>Searching for cleartext passwords
+<ul>
+<li>user data, configuration files, registry files</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#covering-tracks" id="covering-tracks">Covering tracks</a></h3>
+<p>This step involves hiding the compromise of the system from system
+administrators. Techniques involved are:</p>
+<ul>
+<li>Clearing logs
+<ul>
+<li>Useful tools are:
+<ul>
+<li>Zap, Event Log GUI</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Hiding tools
+<ul>
+<li>Useful tools are:
+<ul>
+<li>Rootkits, file streaming</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#creating-back-doors" id="creating-back-doors">Creating back doors</a></h3>
+<p>Back doors will be established in various parts of the system to ensure that
+privileged access is easily regained whenever the intruder needs. Techniques
+involved in this step are:</p>
+<ul>
+<li>Creating accounts</li>
+<li>Scheduling batch / cron jobs</li>
+<li>Infecting startup files</li>
+<li>Planting remote control services</li>
+<li>Installing monitoring mechanisms</li>
+<li>Replacing applications with trojans</li>
+</ul>
+<h2><a class="header" href="#persistence-and-stealth" id="persistence-and-stealth">Persistence and stealth</a></h2>
+<p>Penetration testers are more likely to be persistent and stealthy in order to
+acquire as much information as possible. They'll attempt to acquire a permanent
+foothold in order to establish man-in-the-midle systems, capturing credentials
+and identities, and move from one host / account to another to extend control
+while hiding tracks.</p>
+<h2><a class="header" href="#social-engineering" id="social-engineering">Social engineering</a></h2>
+<p>In social engineering, users / people are the vulnerability. Social engineering
+attacks evaluate the user population and attempt to identify vulnerable users,
+policies, etc.</p>
+<p>Social engineering is effective because it manipulates legitimate users into
+undermining their own security system, abusing trusted relationships between
+employees and the organization. This comes at no cost for the attacker -
+requiring no specialized equipment or skills.</p>
 <h2><a class="header" href="#references" id="references">References</a></h2>
 <ol>
-<li><a href="./pdfs/UsenixSec12.pdf">PharmaLeaks</a></li>
-<li><a href="./pdfs/2008-ccs-spamalytics.pdf">Spamalytics</a></li>
+<li><a href="https://usa.kaspersky.com/resource-center/definitions/what-is-social-engineering">https://usa.kaspersky.com/resource-center/definitions/what-is-social-engineering</a></li>
+<li><a href="./pdfs/post-message.pdf">Securing Frame Communication in Browsers</a></li>
 </ol>
 
                     </main>
@@ -230,15 +437,11 @@ Philippines</li>
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../lesson1/lesson1.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../lesson2/lesson2.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
-                        
-                            <a rel="next" href="../lesson3/lesson3.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -248,15 +451,11 @@ Philippines</li>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="../lesson1/lesson1.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../lesson2/lesson2.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
-                
-                    <a rel="next" href="../lesson3/lesson3.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
                 
             </nav>
 
