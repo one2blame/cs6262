@@ -7,3 +7,6 @@
 [submodule "cs6262-pr3"]
 	path = cs6262-pr3
 	url = ../cs6262-pr3
+[submodule "cs6262-pr4"]
+	path = cs6262-pr4
+	url = ../cs6262-pr4
